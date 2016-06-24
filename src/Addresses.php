@@ -10,6 +10,11 @@ class Addresses
     {
         $this->store = $store;
     }
+
+    public function create(int $address): Address
+    {
+        return new Address($address);
+    }
     
     public function createFour(): array
     {

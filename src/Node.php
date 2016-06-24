@@ -13,9 +13,9 @@ class Node
         $this->record = $record;
     }
     
-    public function address(): Address
+    public function id(): int
     {
-        return $this->record->nodeAddress();
+        return $this->record->nodeAddress()->value();
     }
     
     public function add(Node $node): void
