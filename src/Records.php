@@ -13,7 +13,7 @@ class Records
     
     public function create(): Record
     {
-        list($nodeLink, $siblingLink) = $this->links->createTwo();
+        [$nodeLink, $siblingLink] = $this->links->createTwo();
 
         return new Record(
             $this,
@@ -24,7 +24,7 @@ class Records
 
     public function add(Record $previousRecord, Node $targetNode)
     {
-        list($nodeLink, $siblingLink) = $this->links->add($previousRecord, $targetNode);
+        [$nodeLink, $siblingLink] = $this->links->add($previousRecord, $targetNode);
         
         return new Record(
             $this,
@@ -35,7 +35,7 @@ class Records
 
     public function read(Address $address): Record
     {
-        list($nodeLink, $siblingLink) = $this->links->readTwo($address);
+        [$nodeLink, $siblingLink] = $this->links->readTwo($address);
 
         return new Record(
             $this,

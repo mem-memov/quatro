@@ -15,7 +15,7 @@ class Links
 
     public function createTwo(): array
     {
-        list($nodeAddress, $nodeReference, $siblingAddress, $siblingReference) = $this->addresses->createFour();
+        [$nodeAddress, $nodeReference, $siblingAddress, $siblingReference] = $this->addresses->createFour();
 
         return [
             new Link($this->nodes, $nodeAddress, $nodeReference),
@@ -25,7 +25,7 @@ class Links
 
     public function readTwo(Address $address): array
     {
-        list($nodeAddress, $nodeReference, $siblingAddress, $siblingReference) = $this->addresses->readFour($address);
+        [$nodeAddress, $nodeReference, $siblingAddress, $siblingReference] = $this->addresses->readFour($address);
 
         return [
             new Link($this->nodes, $nodeAddress, $nodeReference),
