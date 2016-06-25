@@ -6,7 +6,7 @@ class Address
 {
     private $value;
     
-    public function __create(int $value)
+    public function __construct(int $value)
     {
         $this->value = $value;
     }

@@ -6,7 +6,7 @@ class Addresses
 {
     private $store;
     
-    public function __construct(Store $store)
+    public function __construct(StoreInterface $store)
     {
         $this->store = $store;
     }

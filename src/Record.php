@@ -20,16 +20,21 @@ class Record
         return $this->nodeLink->internalAddress();
     }
     
-    public function add(Node $node)
+    public function add(Node $node): void
     {
         $this->records->add($this, $node);
+    }
+    
+    public function remove(Node $node): void
+    {
+        
     }
 
     public function each(Nodes $nodes, callable $callback): void
     {
         $node = $this->nodeLink->readNode($nodes);
         
-        $toBeContinued = $callback($node);
+        $toBeContinued = $callback($node, $this);
         
         if (false !== $toBeContinued) {
             $this->siblingLink->each($this->records, $nodes, $callback);

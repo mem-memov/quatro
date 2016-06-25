@@ -4,12 +4,10 @@ namespace MemMemov\Quatro;
 
 class Links
 {
-    private $nodes;
     private $addresses;
 
-    public function __construct(Nodes $nodes, Addresses $addresses)
+    public function __construct(Addresses $addresses)
     {
-        $this->nodes = $nodes;
         $this->addresses = $addresses;
     }
 
@@ -18,8 +16,8 @@ class Links
         [$nodeAddress, $nodeReference, $siblingAddress, $siblingReference] = $this->addresses->createFour();
 
         return [
-            new Link($this->nodes, $nodeAddress, $nodeReference),
-            new Link($this->nodes, $siblingAddress, $siblingReference)
+            new Link($nodeAddress, $nodeReference),
+            new Link($siblingAddress, $siblingReference)
         ];
     }
 
@@ -28,8 +26,8 @@ class Links
         [$nodeAddress, $nodeReference, $siblingAddress, $siblingReference] = $this->addresses->readFour($address);
 
         return [
-            new Link($this->nodes, $nodeAddress, $nodeReference),
-            new Link($this->nodes, $siblingAddress, $siblingReference)
+            new Link($nodeAddress, $nodeReference),
+            new Link($siblingAddress, $siblingReference)
         ];
     }
 

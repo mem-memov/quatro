@@ -23,8 +23,13 @@ class Node
         $this->record->add($node);
     }
 
+    public function remove(Node $node): void
+    {
+        $this->record->remove($node);
+    }
+
     public function each(callable $callback): void
     {
-        return $this->record->each($this->nodes, $callback);
+        $this->record->each($this->nodes, $callback);
     }
 }
