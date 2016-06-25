@@ -34,4 +34,9 @@ class Link
             $node->each($callback);
         }
     }
+
+    public function remove(Node $node): void
+    {
+        $this->internalAddress->
+    }
 }
