@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class QuatroTest extends TestCase
 {
-    protected $store;
+/*    protected $store;
 
     protected function setUp()
     {
@@ -29,5 +29,5 @@ class QuatroTest extends TestCase
         $this->assertInstanceOf(Node::class, $result);
 
         $this->assertEquals($result->id(), 1);
-    }
+    }*/
 }

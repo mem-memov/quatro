@@ -27,7 +27,7 @@ class Record
     
     public function remove(Node $node): void
     {
-        $this->records->remove($node);
+        $this->records->remove($this, $node);
     }
 
     public function each(Nodes $nodes, callable $callback): void

@@ -7,18 +7,23 @@ interface StoreInterface
     /**
      * @return int[] four integers: node address, node reference, sibling address, sibling reference
      */
-    public function reserve(): array;
-
-    /**
-     * @param int $nodeAddress
-     * @return int[] three integers: node reference, sibling address, sibling reference
-     */
-    public function provide(int $nodeAddress): array;
+    public function createNodeRecord(): array;
 
     /**
      * @param int $previousSiblingAddress
      * @param int $nodeReference
-     * @return int[] three integers: node address, sibling address, sibling reference
+     * @return int[] four integers: target node address, target node reference, sibling address, sibling reference
      */
-    public function add(int $previousSiblingAddress, int $nodeReference): array;
+    public function createLinkRecord(int $previousSiblingAddress, int $nodeReference): array;
+
+    /**
+     * @param int $nodeAddress
+     * @return int[] four integers: node address, node reference, sibling address, sibling reference
+     */
+    public function readRecord(int $nodeAddress): array;
+
+    /**
+     * @param int $previousSiblingAddress
+     */
+    public function deleteLinkRecord(int $previousSiblingAddress): void;
 }

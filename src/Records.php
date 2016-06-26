@@ -32,6 +32,11 @@ class Records
             $siblingLink
         );
     }
+    
+    public function remove(Record $previousRecord, Node $targetNode): void
+    {
+        $this->links->remove($previousRecord, $targetNode);
+    }
 
     public function read(Address $address): Record
     {

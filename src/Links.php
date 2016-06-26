@@ -31,7 +31,7 @@ class Links
         ];
     }
 
-    public function add(Record $previousRecord, Node $targetNode)
+    public function add(Record $previousRecord, Node $targetNode): array
     {
         $this->addresses->add();
 
@@ -39,5 +39,10 @@ class Links
             new Link($this->nodes, $nodeAddress, $nodeReference),
             new Link($this->nodes, $siblingAddress, $siblingReference)
         ];
+    }
+
+    public function remove(Record $previousRecord, Node $targetNode)
+    {
+        
     }
 }

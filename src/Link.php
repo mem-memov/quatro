@@ -37,6 +37,6 @@ class Link
 
     public function remove(Node $node): void
     {
-        $this->internalAddress->
+        //$this->internalAddress->
     }
 }
